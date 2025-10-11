@@ -11,7 +11,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
-        return view('book')->with('books', $books);
+        return view('books.book')->with('books', $books);
     }
 
     public function create()
@@ -37,7 +37,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::find($id);
-        return view('book_edit')->with('book', $book);
+        return view('books.book_edit')->with('book', $book);
     }
 
     public function update(Request $request, $id)
