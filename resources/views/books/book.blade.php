@@ -19,6 +19,7 @@
                         <th>#</th>
                         <th>Título</th>
                         <th>Precio</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>

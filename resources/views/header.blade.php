@@ -12,6 +12,6 @@
         <div class="btn-group">
             <a href="{{ route('books.index') }}" class="btn btn-primary">Libros</a>
             <a href="{{ route('authors.index') }}" class="btn btn-info">Autores</a>
-            <a href="" class="btn btn-dark">Libros - Autores</a>
+            <a href="{{ route('author_books.index') }}" class="btn btn-dark">Libros - Autores</a>
         </div>
     </div>
