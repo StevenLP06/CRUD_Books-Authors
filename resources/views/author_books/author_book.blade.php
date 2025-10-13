@@ -25,7 +25,7 @@
                         <th>#</th>
                         <th>Libro</th>
                         <th>Autor/es</th>
-                        <!-- <th>Opciones</th> -->
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +34,14 @@
                             <th>{{ $author_book->id }}</th>
                             <td>{{ $author_book->book->title }}</td>
                             <td>{{ $author_book->author->name }}</td>
+                            <td class="d-flex gap-2">
+                                <a href="{{ route('author_books.edit', $author_book->id) }}" class="btn btn-primary">Editar</a>
+                                <form action="{{ route('author_books.destroy', $author_book->id) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

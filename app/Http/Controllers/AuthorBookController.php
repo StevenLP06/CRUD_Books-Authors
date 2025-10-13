@@ -31,48 +31,32 @@ class AuthorBookController extends Controller
         return redirect()->route('author_books.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $author_book = AuthorBook::find($id);
+        $books = Book::all();
+        $authors = Author::all();
+        return view('author_books.author_book_edit', compact('author_book', 'books', 'authors'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $author_book = AuthorBook::find($id);
+        $author_book->book_id = $request->book_id;
+        $author_book->author_id = $request->author_id;
+        $author_book->save();
+        return redirect()->route('author_books.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $author_book = AuthorBook::find($id);
+        $author_book->delete();
+        return redirect()->route('author_books.index');
     }
 }
