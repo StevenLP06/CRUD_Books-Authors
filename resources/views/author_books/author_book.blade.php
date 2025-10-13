@@ -37,9 +37,9 @@
                             <td class="d-flex gap-2">
                                 <a href="{{ route('author_books.edit', $author_book->id) }}" class="btn btn-primary">Editar</a>
                                 <form action="{{ route('author_books.destroy', $author_book->id) }}" method="post">
-                                    @csrf
+                                    @csrf 
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
