@@ -55,4 +55,16 @@ class BookController extends Controller
         $book->delete();
         return redirect()->route('books.index');
     }
+
+    public function getMaxPrice()
+    {
+        // $book = Book::orderBy('price', 'desc')->first();
+        // return $book;
+        // dd($book);
+        // return view('books.book')->with('book', $book);
+
+        $book_max_price = Book::orderBy('price', 'desc')->first();
+        $books = Book::all();
+        return view('books.book', compact('books', 'book_max_price'));
+    }
 }

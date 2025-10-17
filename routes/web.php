@@ -25,3 +25,23 @@ Route::post('/author_books', [AuthorBookController::class, 'store'])->name('auth
 Route::get('/author_books/{id}', [AuthorBookController::class, 'edit'])->name('author_books.edit');
 Route::put('/author_books/{id}', [AuthorBookController::class, 'update'])->name('author_books.update');
 Route::delete('/author_books/{id}', [AuthorBookController::class, 'destroy'])->name('author_books.destroy');
+
+// RUTA PARA CONSEGUIR EL MAYOR PRECIO - MÉTODO PROPIO
+Route::get('/get_max_price', [BookController::class, 'getMaxPrice'])->name('books.get_max_price');
+
+// RUTA MIDDLEWARE TEST
+// Route::get('/test_middleware', function(){
+//     return 'Middleware Test Succesful';
+// })->middleware('test');
+
+Route::get('/book_price', function(){
+    return 'Puede seguir';
+})->middleware('PriceBook');
+
+Route::get('/book_find', function(){
+    return 'Puede seguir';
+})->middleware('BookFind');
+
+Route::get('/book_sum', function(){
+    return 'Puede seguir';
+})->middleware('BookSum');

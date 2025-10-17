@@ -41,6 +41,7 @@
                 </tbody>
             </table>
         </div>
+        <span>El libro más costoso es: {{ $book_max_price->title }}</span>
     </div>
     
 @include('footer')
