@@ -45,3 +45,6 @@ Route::get('/book_find', function(){
 Route::get('/book_sum', function(){
     return 'Puede seguir';
 })->middleware('BookSum');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
