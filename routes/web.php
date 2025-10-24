@@ -48,7 +48,7 @@ Route::get('/book_sum', function(){
 
 Route::middleware(['auth', 'role:administrador'])->group(function (){
     Route::get('/', function () {
-        return view('book');
+        return view('welcome');
     });
 });
 

@@ -7,5 +7,7 @@
 </head>
 <body>
     <input type="number" name="" id="uno">
+    <button type="button" onclick="validar()">Conocer valor</button>
+    <script src="{{ asset('js/validar.js') }}"></script>
 </body>
 </html>
