@@ -55,6 +55,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'test' => \App\Http\Middleware\Test::class,
+        'role' => \App\Http\Middleware\Role::class,
         'PriceBook' => \App\Http\Middleware\PriceBook::class,
         'BookFind' => \App\Http\Middleware\BookFind::class,
         'BookSum' => \App\Http\Middleware\BookSum::class,

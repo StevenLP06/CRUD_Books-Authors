@@ -46,7 +46,13 @@ Route::get('/book_sum', function(){
     return 'Puede seguir';
 })->middleware('BookSum');
 
+Route::middleware(['auth', 'role:administrador'])->group(function (){
+    Route::get('/', function () {
+        return view('book');
+    });
+});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
